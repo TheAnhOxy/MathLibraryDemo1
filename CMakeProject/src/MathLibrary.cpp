@@ -5,22 +5,15 @@
 
 namespace MathLibrary {
 
-
-bool IsPrime(int num) {
-    if (num <= 1) {
-        return false;
-    }
-    if (num == 2) {
-        return false;     }
-
-    for (int i = 2; i * i <= num; ++i) {
-        if (num % i == 0) {
-            return false;
+    // 1. Kiểm tra số nguyên tố
+    bool IsPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i * i <= num; ++i) {
+            if (num % i == 0) return false;
         }
+        return true;
     }
 
-    return true;
-}
     // 2. Tính tiền điện
     double CalculateElectricBill(double oldReading, double newReading) {
         if (newReading < oldReading || newReading < 0 || oldReading < 0) {
